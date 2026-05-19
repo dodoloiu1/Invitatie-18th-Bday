@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>DODO'S 18TH</title>
-<script src="https://cdn.tailwindcss.com/3.4.1"></script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@600;800&display=swap" rel="stylesheet"/>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -171,28 +171,18 @@ body::before {
 
 .cyber-input {
   width:100%;
-  background:#0e0e0e !important;
+  background:rgba(14,14,14,0.9);
   border:1px solid rgba(0,219,231,0.25);
-  color:#e1fdff !important;
+  color:#e1fdff;
   font-family:'JetBrains Mono',monospace;
   font-size:14px;
-  padding:0.9rem 1rem;
+  padding:0.9rem 1rem 0.9rem 2.5rem;
   outline:none;
   transition:border-color 0.2s, box-shadow 0.2s;
   letter-spacing:0.05em;
-  -webkit-text-fill-color: #e1fdff !important;
-  caret-color: #00dbe7;
 }
 .cyber-input:focus { border-color:#00dbe7; box-shadow:0 0 20px rgba(0,219,231,0.12); }
-.cyber-input::placeholder { color:#526a6b; -webkit-text-fill-color: #526a6b !important; }
-.cyber-input:-webkit-autofill,
-.cyber-input:-webkit-autofill:hover,
-.cyber-input:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0px 1000px #0e0e0e inset !important;
-  -webkit-text-fill-color: #e1fdff !important;
-  caret-color: #00dbe7;
-  border-color: #00dbe7;
-}
+.cyber-input::placeholder { color:#526a6b; }
 
 .progress-track { height:2px; background:rgba(0,219,231,0.1); width:100%; }
 .progress-fill { height:2px; background:#00dbe7; box-shadow:0 0 8px #00dbe7; transition:width 0.5s ease; }
@@ -218,9 +208,9 @@ body::before {
 
 <!-- NAV -->
 <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-5 md:px-10 py-4 bg-[#131313]/80 backdrop-blur-xl border-b border-[#00dbe7]/20 shadow-[0_0_15px_rgba(0,219,231,0.25)]">
-  <div class="text-primary tracking-tighter uppercase cursor-pointer" style="font-family:Sora;font-weight:800;font-size:clamp(1rem,3vw,1.5rem)" onclick="goBack()">DODO'S 18TH</div>
+  <div class="text-primary tracking-tighter uppercase" style="font-family:Sora;font-weight:800;font-size:clamp(1rem,3vw,1.5rem)">DODO'S 18TH</div>
   <div class="hidden md:flex gap-4 items-center">
-    <span class="text-[#b9cacb]" style="font-family:'JetBrains Mono';font-size:12px;letter-spacing:0.2em">SIGNATURE EVENTS // 20.06.2026 // 20:00</span>
+    <span class="text-[#b9cacb]" style="font-family:'JetBrains Mono';font-size:12px;letter-spacing:0.2em">SIGNATURE EVENTS // 21.06.2025 // 20:00</span>
   </div>
   <button class="cyber-button px-5 py-2 text-primary hidden md:block" style="font-family:'JetBrains Mono';font-size:11px;letter-spacing:0.2em;font-weight:700" onclick="goToForm()">COMPLETEAZĂ</button>
   <button class="md:hidden text-primary" onclick="goToForm()">
@@ -252,7 +242,7 @@ body::before {
       <div class="cyber-border p-8 flex flex-col items-center gap-4">
         <span class="material-symbols-outlined text-[#00dbe7]" style="font-size:2.2rem">calendar_month</span>
         <h3 class="text-[#b9cacb]" style="font-family:'JetBrains Mono';font-size:11px;letter-spacing:0.25em;font-weight:700">DATE</h3>
-        <p class="text-primary" style="font-family:Sora;font-size:26px;font-weight:600;line-height:1.25;letter-spacing:0.04em">20 IUNIE<br/>2026</p>
+        <p class="text-primary" style="font-family:Sora;font-size:26px;font-weight:600;line-height:1.25;letter-spacing:0.04em">21 IUNIE<br/>2025</p>
       </div>
       <div class="cyber-border p-8 flex flex-col items-center gap-4">
         <span class="material-symbols-outlined text-[#f4d9ff]" style="font-size:2.2rem">schedule</span>
@@ -261,12 +251,8 @@ body::before {
       </div>
       <div class="cyber-border p-8 flex flex-col items-center gap-4">
         <span class="material-symbols-outlined text-[#72ff70]" style="font-size:2.2rem">location_on</span>
-        <h3 class="text-[#b9cacb]" style="font-family:'JetBrains Mono';font-size:11px;letter-spacing:0.25em;font-weight:700">PLACE</h3>
+        <h3 class="text-[#b9cacb]" style="font-family:'JetBrains Mono';font-size:11px;letter-spacing:0.25em;font-weight:700">LOC</h3>
         <p class="text-[#72ff70]" style="font-family:'JetBrains Mono';font-size:13px;line-height:1.7">Signature Events<br/>Str. Popa Lazăr 5-25</p>
-        <a href="https://maps.app.goo.gl/zXfx4huDaNR3qcA76" target="_blank" class="cyber-button px-4 py-2 flex items-center gap-2 w-full justify-center" style="text-decoration:none">
-          <span class="material-symbols-outlined text-[#72ff70]" style="font-size:16px">map</span>
-          <span style="font-family:'JetBrains Mono';font-size:11px;letter-spacing:0.15em;color:#72ff70;font-weight:700">DESCHIDE PE MAPS</span>
-        </a>
       </div>
     </div>
 
@@ -344,7 +330,8 @@ body::before {
         <span class="text-[#00e639]" style="font-family:'JetBrains Mono';font-size:11px;letter-spacing:0.2em;font-weight:700">CÂMP_01 / IDENTIFICARE</span>
         <p class="text-primary" style="font-family:Sora;font-size:21px;font-weight:600;line-height:1.3">Cum te cheamă?</p>
         <div class="relative">
-          <input class="cyber-input" type="text" id="name-input" placeholder="// Numele tău" oninput="checkName()" autocomplete="off"/>
+          <span class="absolute left-3 top-1/2 -translate-y-1/2 text-[#00e639]" style="font-family:'JetBrains Mono';font-size:13px">//</span>
+          <input class="cyber-input" type="text" id="name-input" placeholder="Numele tău" oninput="checkName()" autocomplete="off"/>
         </div>
         <button class="cyber-button py-3 px-6 text-primary w-full transition-all" id="name-next" style="font-family:'JetBrains Mono';font-size:12px;letter-spacing:0.2em;font-weight:700;opacity:0.35;pointer-events:none" onclick="submitName()">
           CONTINUĂ &nbsp;→
@@ -380,7 +367,8 @@ body::before {
           <button class="opt-btn" onclick="selectDiet('other', this)">✏️ Altceva</button>
         </div>
         <div id="diet-other-wrap" class="relative hidden">
-          <input class="cyber-input" type="text" id="diet-other-input" placeholder="// Specifică alergia / restricția" oninput="checkDietOther()" autocomplete="off"/>
+          <span class="absolute left-3 top-1/2 -translate-y-1/2 text-[#00e639]" style="font-family:'JetBrains Mono';font-size:13px">//</span>
+          <input class="cyber-input" type="text" id="diet-other-input" placeholder="Specifică alergia / restricția" oninput="checkDietOther()" autocomplete="off"/>
         </div>
         <button class="cyber-button py-3 px-6 text-primary w-full transition-all" id="diet-next" style="font-family:'JetBrains Mono';font-size:12px;letter-spacing:0.2em;font-weight:700;opacity:0.35;pointer-events:none" onclick="submitDiet()">
           TRIMITE &nbsp;→
@@ -402,7 +390,7 @@ body::before {
       </div>
       <h2 class="glitch-text text-primary uppercase tracking-widest" style="font-family:Sora;font-size:26px;font-weight:800" id="success-title">ÎNREGISTRAT</h2>
       <p class="text-[#b9cacb]" style="font-family:'JetBrains Mono';font-size:14px;line-height:1.8" id="success-msg">
-        Răspunsul tău a fost transmis cu succes.<br/>Ne vedem pe 20 iunie! 🎉
+        Răspunsul tău a fost transmis cu succes.<br/>Ne vedem pe 21 iunie! 🎉
       </p>
       <div class="cyber-border p-3 w-full">
         <span class="text-[#00e639] blinking-cursor" style="font-family:'JetBrains Mono';font-size:12px;letter-spacing:0.1em">TRANSMISSION COMPLETE</span>
@@ -429,20 +417,20 @@ body::before {
   <div class="text-[#e5e2e1]" style="font-family:'JetBrains Mono';font-size:11px;letter-spacing:0.15em">
     SYSTEM STATUS: <span class="text-[#00e639] blinking-cursor">ONLINE</span> // DODO-18-PROTOCOL
   </div>
-  <div class="text-[#849495]" style="font-family:'JetBrains Mono';font-size:11px">20.06.2026 // 20:00 // SIGNATURE EVENTS</div>
+  <div class="text-[#849495]" style="font-family:'JetBrains Mono';font-size:11px">21.06.2025 // 20:00 // SIGNATURE EVENTS</div>
 </footer>
 
 <script>
 // ─── SUPABASE ───────────────────────────────
 const { createClient } = supabase;
 const db = createClient(
-  'https://dqujculxbyxdivazphsp.supabase.co',
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRxdWpjdWx4Ynl4ZGl2YXpwaHNwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkyMDgwMTIsImV4cCI6MjA5NDc4NDAxMn0.aZMJREvxak_IgH_TdELDr13ZB9kxmnVDqtqvkrn5smg'
+  'https://dlehdgvheztziiwurdtl.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRsZWhkZ3ZoZXp0emlpd3VyZHRsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI2NTEyODMsImV4cCI6MjA4ODIyNzI4M30.dF5qOLUnK931OdEPkQbop7fO2kVZb0qQnQ01Q2_BJmI'
 );
 
 // ─── COUNTDOWN ──────────────────────────────
 function updateCountdown() {
-  const target = new Date('2026-06-20T20:00:00');
+  const target = new Date('2025-06-21T20:00:00');
   const now    = new Date();
   const diff   = target - now;
   const pad    = n => String(Math.max(0,n)).padStart(2,'0');
@@ -582,7 +570,7 @@ async function submitResponse() {
     iconWrap.style.boxShadow = '0 0 30px rgba(0,219,231,0.4)';
     titleEl.textContent = 'ÎNREGISTRAT';
     titleEl.style.color = '#e1fdff';
-    msgEl.innerHTML = 'Răspunsul tău a fost transmis cu succes.<br/>Ne vedem pe 20 iunie! 🎉';
+    msgEl.innerHTML = 'Răspunsul tău a fost transmis cu succes.<br/>Ne vedem pe 21 iunie! 🎉';
     msgEl.style.color = '#b9cacb';
   } else {
     iconEl.textContent = 'cancel';
